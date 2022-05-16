@@ -2,17 +2,19 @@
 You can use this program to find Robot.txt file sites.
 
 # How to run the program:
-first stage :
+
+- first stage :
 
 Download the tool first, then decompress it
 
-second stage :
+- second stage :
 
 Before running the tool, create a file called 1.txt
 Then inside this file the values
 Enter robots.txt and Robots.txt and save.
 
-third level :
+- third level :
+
 Run the tool using the python robots.py command.
 Enter the URL of the site and press Enter.
 If the file is available, you will see the [+] sign next to it, otherwise you will see the [-] sign.
