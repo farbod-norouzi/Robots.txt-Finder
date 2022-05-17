@@ -1,11 +1,11 @@
+from os import system
+
 # Check the requirements
 
 try:
     import requests
-    from os import system
     import sys
     from colorama import Fore
-    import os
     import time
     import random
     from tqdm import tqdm
