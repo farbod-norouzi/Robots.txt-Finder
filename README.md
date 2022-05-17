@@ -19,6 +19,9 @@ Run the tool using the python robots.py command.
 Enter the URL of the site and press Enter.
 If the file is available, you will see the [+] sign next to it, otherwise you will see the [-] sign.
 
+# Attention
+* Note that be sure to install libraries from the "Required plugins" section so that you do not have any problems running the program! *
+
 # Plugins required
 - pip install python
 - pip install requests 
