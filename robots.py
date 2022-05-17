@@ -1,26 +1,22 @@
+import os
 from os import system
+import requests
+import sys
+from colorama import Fore
+import time
+import random
+from tqdm import tqdm
+import platform 
 
-# Check the requirements
+# Start APP
+def clear():
+   result = platform.uname()[0]
+   if result == "Windows":
+      system("cls")
+   elif result == "Linux":
+      system("clear")
+clear()
 
-try:
-    import requests
-    import sys
-    from colorama import Fore
-    import time
-    import random
-    from tqdm import tqdm
-except ImportError:
-    system("pip install os ")
-    system("pip install colorama ")
-    system("pip install time ")
-    system("pip install random ")
-    system("pip install tqdm ")
-    system("pip install sys ")
-    system("pip install requests ")
-    
-#Start APP
-
-os.system("cls")
 print(Fore.RED +"""
 ######                                                           
 #     #  ####  #####   ####  #####  ####      ##### #    # ##### 
