@@ -1,14 +1,27 @@
+# Start (Import libraries)
+
 import os
 from os import system
-import requests
-import sys
-from colorama import Fore
 import time
-import random
-from tqdm import tqdm
 import platform 
+import sys
+try:
+    import requests
+    from colorama import Fore
+    import random
+    from tqdm import tqdm
+except:
+   print("Installing prerequisites")
+   system("pip install colorama ")
+   system("pip install requests")
+   system("pip install ipapi")
+   system("pip install datetime")
+   exit('\n',"Run script Again")
 
-# Start APP
+# End (Import libraries)
+
+# Start (Banner & Clearing)
+
 def clear():
    result = platform.uname()[0]
    if result == "Windows":
@@ -26,47 +39,66 @@ print(Fore.RED +"""
 #    #  #    # #    # #    #   #   #    # ###   #    #  #    #   
 #     #  ####  #####   ####    #    ####  ###   #   #    #   # """+Fore.RESET)
 
+# End (Banner & Clearing)
+
+# Start (Search For URL & 1.txt file)
+
 def robots():
     with open('1.txt','r') as f:
         search = f.read().split()
 
     try:
-        print('\n'," [!] Please Enter Target Site Address \n")
-        URL = input(" [~>] Enter Your Target : ")
+        print('\n',"[*] Please Enter Target Site Address \n")
+        URL = input(" [>] Enter Your Target : ")
         if 'http' not in URL:
             URL = ('http://'+URL)
         else:
             pass
 
-        time.sleep(5)
-        print('\n',"Sacanning URL...")
-        time.sleep(15)
+# End (Search For URL & 1.txt file)
+
+# Start (Progress bar)
+
+        time.sleep(3)
+        print('\n',"Scanning URL...")
+        time.sleep(7)
         for i in tqdm(range(10)):
     
             pass
 
-        time.sleep(5)
+        time.sleep(3)
         print('\n',"Search For Robots.txt or robots.txt Files...")
-        time.sleep(15)
+        time.sleep(7)
         for i in tqdm(range(10)):
-    
+
             pass
+
+        time.sleep(3)
+        print('\n',"Search For Directory's...")
+        time.sleep(7)
+        for i in tqdm(range(10)):
+
+            pass
+
+# End (Progress bar)
+
+# Start (Search Directory)
 
         for i in search:
             url = (URL+"/"+i)
             reqs = requests.get(url)
             if reqs.status_code == 200 or reqs.status_code == 405:
-                time.sleep(5)
-                print('\n',"Result:",'\n')
-                time.sleep(10)
-                print(Fore.GREEN+" [+] "+ url+Fore.RESET)
+                print(Fore.GREEN+'\n'," [+] "+ url+Fore.RESET)
             else:
-                print(Fore.RED+" [-] "+url+Fore.RESET)
+                print(Fore.RED+'\n'," [-] "+url+Fore.RESET)
         try:
+            print('\n',"All files and directories were checked!")
             input(" [!] Press Enter... ")
         except:
-            print("")
+            print("Someting Went Wrong")
             sys.exit()
     except:
         print("")
 robots()
+
+# End (Search Directory)
